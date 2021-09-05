@@ -454,7 +454,7 @@ export class EntityService {
           value: null,
           predicate: {
             type: FilterPredicateType.STRING,
-            operation: StringOperation.STARTS_WITH,
+            operation: StringOperation.CONTAINS,
             ignoreCase: true,
             value: {
               defaultValue: searchText
