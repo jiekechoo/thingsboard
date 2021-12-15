@@ -32,6 +32,7 @@ export interface AlarmFilterPanelData {
   statusList: AlarmSearchStatus[];
   severityList: AlarmSeverity[];
   typeList: string[];
+  area: string[];
 }
 
 @Component({
@@ -67,7 +68,8 @@ export class AlarmFilterPanelComponent {
       {
         alarmStatusList: [this.data.statusList],
         alarmSeverityList: [this.data.severityList],
-        alarmTypeList: [this.data.typeList]
+        alarmTypeList: [this.data.typeList],
+        alarmArea: [this.data.area]
       }
     );
   }
@@ -107,7 +109,8 @@ export class AlarmFilterPanelComponent {
     this.result = {
       statusList: this.alarmFilterFormGroup.get('alarmStatusList').value,
       severityList: this.alarmFilterFormGroup.get('alarmSeverityList').value,
-      typeList: this.alarmFilterFormGroup.get('alarmTypeList').value
+      typeList: this.alarmFilterFormGroup.get('alarmTypeList').value,
+      area: this.alarmFilterFormGroup.get('alarmArea').value
     };
     this.overlayRef.dispose();
   }
