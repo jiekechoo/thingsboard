@@ -1,0 +1,79 @@
+<form
+  name="form"
+  (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm"
+  novalidate
+>
+  <div class="form-group">
+    <label for="username">ID </label>
+    <mat-form-field appearance="outline"
+      ><input
+        matInput
+        type="email"
+        class="form-control"
+        name="username"
+        [(ngModel)]="form.username"
+        required
+        #username="ngModel"
+    /></mat-form-field>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="username.errors && f.submitted"
+    >
+      Username is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">PW </label>
+    <mat-form-field appearance="outline"
+      ><input
+        matInput
+        type="password"
+        class="form-control"
+        name="password"
+        [(ngModel)]="form.password"
+        required
+        minlength="6"
+        #password="ngModel"
+    /></mat-form-field>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="password.errors && f.submitted"
+    >
+      <div *ngIf="password.errors['required']">Password is required</div>
+      <div *ngIf="password.errors['minlength']">
+        Password must be at least 6 characters
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button mat-raised-button color="basic" class="btn btn-primary btn-block">
+      Login
+    </button>
+  </div>
+  <div class="form-group">
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="f.submitted && isLoginFailed"
+    >
+      Login failed: {{ errorMessage }}
+    </div>
+  </div>
+</form>
+
+<div *ngIf="isLoggedIn">
+  <p>Hello, {{ role }}</p>
+  <button mat-flat-button routerLink="/maintenance">Maintenance</button>
+  <button
+    mat-raised-button
+    color="primary"
+    style="margin-left: 5px"
+    routerLink="/signup"
+  >
+    加入会员
+  </button>
+  <p><a href class="nav-link" (click)="logout()">LogOut</a></p>
+</div>

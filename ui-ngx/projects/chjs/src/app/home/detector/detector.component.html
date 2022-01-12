@@ -1,0 +1,75 @@
+<mat-form-field appearance="outline">
+  <mat-label>线路</mat-label>
+  <mat-select>
+    <mat-option value="HELLO"> HELLO </mat-option>
+    <mat-option value="WORLD"> WORLD </mat-option>
+    <mat-option value="JIEKE"> JIEKE </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>层</mat-label>
+  <mat-select>
+    <mat-option value="HELLO"> HELLO </mat-option>
+    <mat-option value="WORLD"> WORLD </mat-option>
+    <mat-option value="JIEKE"> JIEKE </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>工厂</mat-label>
+  <mat-select>
+    <mat-option value="HELLO"> HELLO </mat-option>
+    <mat-option value="WORLD"> WORLD </mat-option>
+    <mat-option value="JIEKE"> JIEKE </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>气体名称</mat-label>
+  <mat-select>
+    <mat-option value="HELLO"> HELLO </mat-option>
+    <mat-option value="WORLD"> WORLD </mat-option>
+    <mat-option value="JIEKE"> JIEKE </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>类型</mat-label>
+  <mat-select>
+    <mat-option value="HELLO"> HELLO </mat-option>
+    <mat-option value="WORLD"> WORLD </mat-option>
+    <mat-option value="JIEKE"> JIEKE </mat-option>
+  </mat-select>
+</mat-form-field>
+<table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+  The actual rendered columns are set as a property on the row definition" -->
+  <!-- Position Column -->
+  <ng-container matColumnDef="line">
+    <th mat-header-cell *matHeaderCellDef>线路</th>
+    <td mat-cell *matCellDef="let element">{{ element.line }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="level">
+    <th mat-header-cell *matHeaderCellDef>层</th>
+    <td mat-cell *matCellDef="let element">{{ element.level }}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Gas名称</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef>探测器类型</th>
+    <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+  </ng-container>
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="current">
+    <th mat-header-cell *matHeaderCellDef>安装现状</th>
+    <td mat-cell *matCellDef="let element">{{ element.current }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns1"></tr>
+</table>

@@ -1666,7 +1666,7 @@
         "no-software-matching": "找不到与 '{{entity}}' 匹配的软件。",
         "no-software-text": "没有找到软件",
         "search": "查找固件",
-        "selected-firmware": "已选择{ count, plural, 1 {# 个固件} other {# 个固件}",
+        "selected-firmware": "已选择{ count, plural, 1 {# 个固件} other {# 个固件} }",
         "software": "软件",
         "software-required": "软件为必选项。",
         "title": "标题",

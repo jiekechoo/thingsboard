@@ -1,0 +1,21 @@
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-toolbar button {
+  width: 100% !important;
+  height: 55px;
+  min-width: unset !important;
+  margin: 0px 1px;
+  border-radius: 0;
+  font-size: x-large;
+  font-weight: bold;
+  background-color: #d0d0d0;
+  color: white;
+}
+
+.menuactive {
+  background-color: #1f3e5d !important;
+}

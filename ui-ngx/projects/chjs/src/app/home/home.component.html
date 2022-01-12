@@ -1,0 +1,80 @@
+<div class="grid-container">
+  <mat-grid-list cols="3" rowHeight="120px">
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card bg-color">
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <img [src]="'assets/images/chjs.png'" alt="" height="80px" />
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="2">
+      <mat-card class="dashboard-card bg-title">
+        <mat-card-content class="dashboard-card-content">
+          <div class="title-name">防灾 Detector Monitoring System(暂定名)</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="2">
+      <mat-card class="dashboard-card bg-color">
+        <mat-card-content class="dashboard-card-content">
+          <app-login-chjs [isLoggedIn]="isLoggedIn"></app-login-chjs>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="5">
+      <mat-card class="dashboard-card bg-alarm">
+        <mat-card-content class="dashboard-card-content">
+          <table>
+            <tr>
+              <td style="text-align: left">
+                <button
+                  mat-raised-button
+                  color="warn"
+                  style="
+                    margin-right: 5px;
+                    min-width: 200px;
+                    border-radius: 0;
+                    color: black;
+                  "
+                >
+                  事件 Alarm
+                </button>
+              </td>
+              <td style="text-align: left">
+                <button
+                  mat-raised-button
+                  color="accent"
+                  style="
+                    margin-right: 5px;
+                    min-width: 200px;
+                    border-radius: 0;
+                    color: black;
+                  "
+                >
+                  Fault Alarm
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <app-gas-alarm [isLoggedIn]="isLoggedIn"></app-gas-alarm>
+              </td>
+              <td>
+                <app-fault-alarm [isLoggedIn]="isLoggedIn"> </app-fault-alarm>
+              </td>
+            </tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="4">
+      <mat-card class="dashboard-card bg-color">
+        <mat-card-content *ngIf="isLoggedIn" class="dashboard-card-content">
+          <app-detector></app-detector>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
