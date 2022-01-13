@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-login-chjs",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"],
+  selector: 'app-login-chjs',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export class Login1Component implements OnInit {
   form: any = {
@@ -13,7 +13,8 @@ export class Login1Component implements OnInit {
 
   @Input() isLoggedIn: any;
   isLoginFailed = false;
-  errorMessage = "";
+  errorMessage = '';
+  role = '';
 
   constructor() {}
 
@@ -22,7 +23,7 @@ export class Login1Component implements OnInit {
   onSubmit() {}
 
   reloadPage(): void {
-    window.location.href = "/";
+    window.location.href = '/';
     // window.location.reload();
   }
 

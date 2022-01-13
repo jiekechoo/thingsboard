@@ -13,24 +13,32 @@
 /// See the License for the specific language governing permissions and
 /// limitations under the License.
 ///
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChjsSharedModule } from './../../projects/chjs/src/app/app.module';
 
 const routes: Routes = [
-  { path: '',
+  // {
+  //   path: 'chjs',
+  //   loadChildren: () =>
+  //     import('./../../projects/chjs/src/app/app.module').then(
+  //       (m) => m.ChjsSharedModule
+  //     ),
+  // },
+  {
+    path: '',
     redirectTo: 'home',
     pathMatch: 'full',
     data: {
       breadcrumb: {
-        skip: true
-      }
-    }
-  }
+        skip: true,
+      },
+    },
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), ChjsSharedModule.forRoot()],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
