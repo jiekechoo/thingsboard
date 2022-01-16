@@ -24,8 +24,13 @@
             "tsConfig": "src/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/thingsboard.ico",
+              "src/yiqisoft.ico",
               "src/assets",
+              {
+                "glob": "**/*",
+                "input": "projects/chjs/src/assets/images",
+                "output": "assets/images"
+              },
               {
                 "glob": "worker-html.js",
                 "input": "./node_modules/ace-builds/src-noconflict/",
